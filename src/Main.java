@@ -6,7 +6,7 @@ public class Main {
 
         app.setRounds(Integer.parseInt(args[1]));
         app.run();
-        System.out.println("dfda");
+
 
 
     }
