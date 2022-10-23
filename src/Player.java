@@ -8,4 +8,7 @@ public class Player {
         this.name=name;
         this.money=0;
     }
+    public String getName(){
+        return name;
+    }
 }

@@ -8,47 +8,7 @@ public class Application {
     Application(InputDevice input, OutputDevice output, int num){
         this.input = input;
         this.output = output;
-        String[] spaces = {"START",
-                "Mediterranean Avenue",
-                "Community Chest",
-                "Baltic Avenue",
-                "Income Tax",
-                "Reading Railroad",
-                "Oriental Avenue",
-                "Chance",
-                "Vermont Avenue",
-                "Connecticut Avenue",
-                "Jail",
-                "St. Charles Place",
-                "Electrical Company",
-                "States Avenue",
-                "Virginia Avenue",
-                "Pennsylvania Railroad",
-                "St. James Place",
-                "Community Chest",
-                "Tennessee Avenue",
-                "New York Avenue",
-                "Park",
-                "Kentucky Avenue",
-                "Chance",
-                "Indiana Avenue",
-                "Illinois Avenue",
-                "B & O Railroad",
-                "Atlantic Avenue",
-                "Ventnor Avenue",
-                "Water Works",
-                "Marvin Gardens",
-                "Go to Jail",
-                "Pacific Avenue",
-                "North Carolina Avenue",
-                "Community Chest",
-                "Pennsylvania Avenue",
-                "Short Line",
-                "Chance",
-                "Park Place",
-                "Luxury Tax",
-                "Boardwalk"};
-        b = new Board(spaces);
+        b=new Board();
         numPlayers=num;
         players = new Player[10];
         for (int i = 0; i < getPlayers(); i++)
@@ -79,7 +39,7 @@ public class Application {
             players[i].money=players[i].money+(players[i].position/40)*200;
             b.bank=b.bank-(players[i].position/40)*200;
             output.writeMessage("Name: " + players[i].name + "\ncash: " + players[i].money );
-            output.writeMessage("Position: " + b.properties[players[i].position%40] + "\n");
+            output.writeMessage("Position: " + b.squares[players[i].position%40].getName() + "\n");
         }
         Player winner=null;
         winner=new Player(input.getName());
@@ -100,7 +60,7 @@ public class Application {
         }
         output.writeMessage(" bank: " + b.bank+ "\n\nPlaces: ");
         for(int i=0;i<40;i++)
-            output.writeMessage(b.properties[i]+" ");
+            output.writeMessage(b.squares[i].getName()+" ");
         output.writeMessage("\n"+"Players:\n");
 
         input.declare();
