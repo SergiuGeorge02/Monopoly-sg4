@@ -1,6 +1,6 @@
 public class Board {
 //    String[] properties;
-    Square[] squares;
+    public Square[] squares;
     double bank;
     private String[] spaces = {"START",
             "Mediterranean Avenue",
@@ -49,8 +49,12 @@ public class Board {
                 squares[i]=new Square(spaces[i]);
         else if(spaces[i].equals("Reading Railroad")||spaces[i].equals("Electrical Company")||spaces[i].equals("Pennsylvania Railroad")||spaces[i].equals("B & O Railroad")||spaces[i].equals( "Water Works")|| spaces[i].equals("Short Line"))
             squares[i]=new Property(spaces[i],0,100);
-        else
-            squares[i]=new Property(spaces[i],1,50);
+        else{
+                squares[i]=new Property(spaces[i],1,50);
+                ((Property) squares[i]).setNotupgradable();
+
+            }
+
 
         this.bank = 25000.0;
     }

@@ -1,6 +1,6 @@
 public class Player {
     String name;
-
+    public int properties=0;
     int money;
     public int position;
     public Player(String name){
@@ -11,4 +11,5 @@ public class Player {
     public String getName(){
         return name;
     }
+
 }

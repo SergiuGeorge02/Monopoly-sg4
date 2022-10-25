@@ -1,4 +1,4 @@
-public class Square {
+public  class Square  {
 private String name;
 public Square(String name){
     this.name=name;
@@ -6,5 +6,6 @@ public Square(String name){
 public String getName(){
     return name;
 }
+
 
 }
